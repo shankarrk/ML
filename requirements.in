@@ -1,0 +1,6 @@
+#requirements.in
+lightgbm
+pandas
+scikit-learn
+numpy
+nltk
