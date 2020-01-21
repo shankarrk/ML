@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import lightgbm as lgb
 import numpy as np
 import pandas as pd
@@ -79,7 +81,9 @@ def price_category(price):
 
 def prepare_data() -> pd.DataFrame:
     # Load data
-    df = pd.read_csv('./data/AB_NYC_2019.csv')
+    mod_path = Path(__file__).parent
+    data_path = (mod_path/'data/AB_NYC_2019.csv').resolve()
+    df = pd.read_csv(data_path)
     df.set_index('id', inplace=True)
 
     # Data prep
